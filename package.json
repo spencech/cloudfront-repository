@@ -1,0 +1,27 @@
+{
+  "name": "upbeat-cloudfront-cache-invalidator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "dev": "tsc && node ./build/index.js",
+    "prod": "tsc && mkdir temp && cp -r node_modules build/* temp && cd temp && zip -r lambda.zip * && cd .. && mv temp/lambda.zip . && aws lambda update-function-code --function-name cloudfront-cache-invalidator --zip-file fileb://lambda.zip && rm -rf temp && rm lambda.zip"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-cloudfront": "^3.43.0",
+    "@aws-sdk/client-codepipeline": "^3.43.0",
+    "@types/aws-sdk": "^2.7.0",
+    "aws-sdk": "^2.977.0",
+    "randomstring": "^1.2.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.2",
+    "@types/randomstring": "^1.1.8"
+  }
+}
