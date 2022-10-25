@@ -1,6 +1,6 @@
 # Cloudfront Cache Invalidator (AWS Lambda Function)
 
-You can invoke this function from CodePipelines to clear CloudFront caches after a new app deployment. This assumes that you have a function created in Lambda called "cloudfront-cache-invalidator" with the appropriate permissions for executing CloudFront invalidations. I typially set the timeout to 3m because sometimes the request spins for a bit.
+You can invoke this function from CodePipelines to clear CloudFront caches after a new app deployment. This assumes that you have a function created in Lambda called "cloudfront-cache-invalidator" with the appropriate permissions for executing CloudFront invalidations. I typically set the timeout to 3m because sometimes the request spins for a bit.
 
 ## Installation
 
